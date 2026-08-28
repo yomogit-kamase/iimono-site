@@ -191,3 +191,28 @@ td a{border-bottom:1px solid var(--gold)}
 .category-image-preview strong{display:block;margin-bottom:8px;font-size:18px}
 .category-image-preview p{color:var(--muted);line-height:1.7}
 @media(max-width:900px){.category-master-layout{grid-template-columns:1fr}.category-master-layout>aside{max-height:none}.category-image-preview{grid-template-columns:140px 1fr}.category-image-preview img{width:140px;height:140px}}
+
+/* 関係者向けマークアップ確認一覧 */
+.markup-review-page{padding-bottom:80px}
+.review-page-summary{display:grid;grid-template-columns:repeat(3,minmax(0,220px));gap:16px;margin:0 0 42px}
+.review-page-summary>div{padding:20px 22px;border:1px solid var(--line);background:#fff}
+.review-page-summary span,.review-page-summary small{display:block;color:var(--muted);font-size:16px}
+.review-page-summary strong{display:inline-block;margin:8px 8px 0 0;color:var(--navy);font:600 34px/1 Arial,sans-serif}
+.review-page-summary small{display:inline}
+.review-page-group{margin-top:44px}
+.review-page-group-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:14px;padding-bottom:12px;border-bottom:1px solid var(--gold)}
+.review-page-group-head h2{margin:0;color:var(--navy);font:600 27px/1.45 "Yu Mincho","Hiragino Mincho ProN",serif}
+.review-page-group-head span{color:var(--muted);font-size:16px}
+.review-page-table table{min-width:1080px}
+.review-page-table th:nth-child(1),.review-page-table td:nth-child(1){width:64px;text-align:center}
+.review-page-table th:nth-child(2),.review-page-table td:nth-child(2){width:250px}
+.review-page-table th:nth-child(4),.review-page-table td:nth-child(4){width:310px}
+.review-page-table td{vertical-align:top;line-height:1.7}
+.review-page-table td a{overflow-wrap:anywhere;text-decoration:underline;text-underline-offset:4px}
+.review-page-note{margin-top:26px;color:var(--muted);font-size:16px}
+@media(max-width:700px){
+  .review-page-summary{grid-template-columns:1fr;gap:10px}
+  .review-page-summary>div{padding:16px 18px}
+  .review-page-group-head{align-items:center}
+  .review-page-group-head h2{font-size:23px}
+}
