@@ -216,3 +216,48 @@ td a{border-bottom:1px solid var(--gold)}
   .review-page-group-head{align-items:center}
   .review-page-group-head h2{font-size:23px}
 }
+
+/* 商品詳細内で完結する編集部記事 */
+.product-editorial-article{overflow:hidden;background:#fff;border:1px solid var(--line)}
+.product-editorial-header{width:min(860px,calc(100% - 48px));margin:0 auto;padding:52px 0 38px}
+.product-editorial-header .meta{margin-bottom:16px;color:var(--muted);font-size:16px}
+.product-editorial-header h3{margin:0 0 22px;color:var(--navy);font:600 clamp(30px,3.2vw,46px)/1.5 "Yu Mincho","Hiragino Mincho ProN",serif;letter-spacing:.03em}
+.product-editorial-lead{margin:0;color:#303a48;font-size:18px;line-height:2}
+.product-editorial-hero{margin:0}
+.product-editorial-hero img{display:block;width:100%;aspect-ratio:16/7;object-fit:cover}
+.product-editorial-hero figcaption{padding:13px 24px;background:#f3f0e9;color:var(--muted);font-size:16px;line-height:1.7;text-align:center}
+.product-editorial-body{width:min(820px,calc(100% - 48px));margin:0 auto;padding:48px 0 56px}
+.product-editorial-body>p{margin:0 0 24px;color:#26313f;font-size:17px;line-height:2.05}
+.product-editorial-body>h4{margin:54px 0 18px;padding-left:18px;border-left:3px solid var(--gold);color:var(--navy);font:600 26px/1.55 "Yu Mincho","Hiragino Mincho ProN",serif}
+.product-editorial-points{margin:42px 0 48px;padding:30px;background:#f4f2ed;border-top:2px solid var(--gold)}
+.product-editorial-points h4{margin:0 0 22px;color:var(--navy);font-size:22px}
+.product-editorial-points ol{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;margin:0;padding:0;background:var(--line);list-style:none}
+.product-editorial-points li{padding:22px;background:#fff}
+.product-editorial-points li>span{display:block;margin-bottom:12px;color:var(--gold);font:600 22px/1 Georgia,serif}
+.product-editorial-points li>strong{display:block;margin-bottom:9px;color:var(--navy);font-size:17px}
+.product-editorial-points li>p{margin:0;color:#3f4957;font-size:16px;line-height:1.8}
+.product-editorial-detail-figure{display:grid;grid-template-columns:minmax(260px,42%) 1fr;align-items:center;margin:36px 0 50px;background:#f4f2ed}
+.product-editorial-detail-figure img{width:100%;aspect-ratio:4/3;object-fit:cover}
+.product-editorial-detail-figure figcaption{display:grid;gap:10px;padding:28px;font-size:16px;line-height:1.8}
+.product-editorial-detail-figure strong{color:var(--navy);font-size:18px}
+.product-editorial-note{margin-top:40px;padding:24px 28px;border:1px solid var(--line);background:#faf9f6}
+.product-editorial-note>strong{display:block;margin-bottom:13px;color:var(--navy);font-size:18px}
+.product-editorial-note dl{margin:0}.product-editorial-note dl>div{display:grid;grid-template-columns:110px 1fr;padding:9px 0;border-top:1px solid var(--line)}
+.product-editorial-note dt{font-weight:700}.product-editorial-note dd{margin:0}
+.product-editorial-author{display:flex;align-items:center;justify-content:flex-end;gap:16px;margin-top:36px;padding-top:22px;border-top:1px solid var(--line)}
+.product-editorial-author span{color:var(--muted);font-size:16px}.product-editorial-author strong{color:var(--navy)}
+@media(max-width:760px){
+  .product-editorial-header,.product-editorial-body{width:calc(100% - 36px)}
+  .product-editorial-header{padding:36px 0 28px}
+  .product-editorial-header h3{font-size:29px}
+  .product-editorial-lead{font-size:17px}
+  .product-editorial-hero img{aspect-ratio:4/3}
+  .product-editorial-hero figcaption{text-align:left}
+  .product-editorial-body{padding:34px 0 42px}
+  .product-editorial-points{margin:32px -4px 40px;padding:22px 18px}
+  .product-editorial-points ol{grid-template-columns:1fr}
+  .product-editorial-detail-figure{grid-template-columns:1fr}
+  .product-editorial-detail-figure figcaption{padding:22px}
+  .product-editorial-note dl>div{grid-template-columns:1fr;gap:5px}
+  .product-editorial-author{align-items:flex-end;flex-direction:column;gap:4px}
+}
