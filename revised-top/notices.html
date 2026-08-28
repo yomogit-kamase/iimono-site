@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>お知らせ一覧｜いいモノ.com</title>
+  <meta name="description" content="いいモノ.comからのお知らせ一覧です。">
+  <link rel="stylesheet" href="notices.css">
+</head>
+<body>
+  <header class="notice-page-header">
+    <a class="notice-logo" href="pattern-4.html" aria-label="いいモノ.com トップ"><strong>いいモノ<span>.com</span></strong></a>
+    <nav aria-label="ページメニュー"><a href="pattern-4.html">トップへ戻る</a><a href="pattern-4.html#products">今月のいいモノ</a><a href="pattern-4.html#editorial">特集</a></nav>
+  </header>
+  <main class="notice-page-main">
+    <nav class="breadcrumb" aria-label="パンくず"><a href="pattern-4.html">トップ</a><span>／</span><span>お知らせ</span></nav>
+    <header class="notice-page-title"><p>INFORMATION</p><h1>お知らせ</h1><span>サイトの更新情報や、新しい選品・機能についてご案内します。</span></header>
+    <div class="notice-filter" aria-label="お知らせの分類"><button class="is-active" type="button">すべて</button><button type="button">選品・商品</button><button type="button">サイト更新</button><button type="button">重要なお知らせ</button></div>
+    <section class="notice-archive" aria-label="お知らせ一覧">
+      <article id="notice-20260815"><time datetime="2026-08-15">2026.08.15</time><span>選品・商品</span><div><h2>「今月のいいモノ」8月の選品を公開しました</h2><p>季節の贈り物や日々の暮らしに取り入れたい商品を、編集部の視点とともに紹介しています。</p><a href="pattern-4.html#products">今月のいいモノを見る →</a></div></article>
+      <article id="notice-20260810"><time datetime="2026-08-10">2026.08.10</time><span>選品・商品</span><div><h2>いいモノ認証セレクションに新しい商品を追加しました</h2><p>認証情報を確認できる商品を追加し、購入先と商品情報を更新しました。</p><a href="pattern-4.html#featured">認証セレクションを見る →</a></div></article>
+      <article id="notice-20260801"><time datetime="2026-08-01">2026.08.01</time><span>サイト更新</span><div><h2>会員向け「お気に入り」機能のデモを公開しました</h2><p>気になる商品を保存し、あとから比較・検討できる会員機能の画面サンプルを追加しました。</p><a href="pattern-4.html">トップページへ戻る →</a></div></article>
+      <article><time datetime="2026-07-25">2026.07.25</time><span>特集</span><div><h2>特集「夏に贈りたい、涼やかな菓子」を公開しました</h2><p>味わい、日持ち、届け方の観点から、夏の贈り物を選ぶポイントを整理しています。</p><a href="../article.html">特集を読む →</a></div></article>
+      <article><time datetime="2026-07-18">2026.07.18</time><span>サイト更新</span><div><h2>エリアから商品を探せるようになりました</h2><p>生産地やブランドがものづくりを続ける地域を起点に、掲載商品を探せます。</p><a href="pattern-4.html#areas">エリアから探す →</a></div></article>
+      <article><time datetime="2026-07-01">2026.07.01</time><span>重要なお知らせ</span><div><h2>サイトデザインの試作版を公開しました</h2><p>商品、生産者、専門家、編集部の視点から選べるトップページの試作版です。</p><a href="pattern-4.html">試作版を見る →</a></div></article>
+    </section>
+  </main>
+  <footer class="notice-page-footer"><strong>いいモノ<span>.com</span></strong><p>商品と、それを語る人に出会う場所。</p><small>© 2026 いいモノ.com — デザイン試作</small></footer>
+  <script>
+    document.querySelectorAll('.notice-filter button').forEach(button=>button.addEventListener('click',()=>{document.querySelectorAll('.notice-filter button').forEach(item=>item.classList.toggle('is-active',item===button));}));
+  </script>
+</body>
+</html>

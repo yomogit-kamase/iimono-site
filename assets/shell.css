@@ -1,0 +1,183 @@
+@charset "UTF-8";
+
+/* Public-site header and footer shared by every Pattern 5 page. */
+.common-site-header{
+  position:sticky;
+  z-index:50;
+  top:0;
+  color:#14233b;
+  background:rgba(255,255,255,.97);
+  border-bottom:1px solid #d9d3c7;
+  backdrop-filter:blur(16px);
+  box-shadow:0 3px 18px rgba(20,35,59,.045);
+  font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+}
+.common-site-header *,.common-site-footer *{box-sizing:border-box}
+.common-site-header a,.common-site-footer a{text-decoration:none}
+.common-site-header button{font:inherit}
+.common-header-main{
+  width:100%;
+  height:70px;
+  min-height:70px;
+  display:grid;
+  grid-template-columns:auto minmax(260px,620px) 1fr auto;
+  align-items:center;
+  gap:22px;
+  padding:0 clamp(18px,2vw,34px);
+}
+.common-brand{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  color:#14233b;
+  font-family:"Yu Mincho","Hiragino Mincho ProN",serif;
+  font-size:23px;
+  font-weight:700;
+  line-height:1;
+  letter-spacing:.04em;
+  white-space:nowrap;
+}
+.common-brand i{display:block;width:3px;height:34px;background:#b08a43}
+.common-brand strong{font:inherit}
+.common-brand small{display:inline;color:#8f2634;font-size:16px;line-height:1}
+.common-search{
+  width:100%;
+  height:42px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin:0;
+  padding:0 17px;
+  color:#626a75;
+  background:#f4f2ed;
+  border:1px solid #d9d3c7;
+  border-radius:999px;
+  font-size:16px;
+  text-align:left;
+}
+.common-search b{color:#14233b;font-size:20px}
+.common-member-menu{position:relative;z-index:30;grid-column:4;align-self:stretch;justify-self:end;display:flex;align-items:center;height:70px}
+.common-member-menu .common-member-trigger{
+  min-width:48px;
+  height:58px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+  padding:4px 8px;
+  color:#14233b;
+  background:transparent;
+  border:0;
+  font-size:16px;
+  font-weight:700;
+}
+.common-member-icon{
+  width:23px;
+  height:23px;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.7;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.common-member-menu .common-member-panel{
+  position:absolute;
+  top:calc(100% + 10px);
+  right:0;
+  width:240px;
+  padding:20px;
+  color:#14233b;
+  background:#fff;
+  border:1px solid #d9d3c7;
+  box-shadow:0 16px 40px rgba(20,35,59,.14);
+}
+.common-member-menu .common-member-panel p{margin:0 0 12px;font-weight:700}
+.common-member-menu .common-member-panel>a{display:block;margin:7px 0;padding:9px 12px;text-align:center;border:1px solid #14233b}
+.common-member-menu .common-member-panel .common-member-login{color:#fff;background:#14233b}
+.common-member-menu .common-member-panel nav{display:grid;margin-top:12px;border-top:1px solid #d9d3c7}
+.common-member-menu .common-member-panel nav a{padding:8px 0;border-bottom:1px solid #eee;font-size:16px}
+.common-menu-button{display:none;grid-column:4;min-width:48px;min-height:44px;padding:0;color:#14233b;background:transparent;border:0;font-weight:700}
+.common-global-nav{
+  height:46px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:38px;
+  padding:0 20px;
+  background:#fff;
+  border-top:1px solid #eee;
+  font-size:16px;
+  font-weight:700;
+}
+.common-global-nav a{display:flex;align-items:center;height:100%;border-bottom:3px solid transparent}
+.common-global-nav a:hover,.common-global-nav a:focus-visible{color:#8f2634;border-bottom-color:#b08a43}
+
+.common-site-footer{
+  display:grid;
+  grid-template-columns:minmax(230px,1fr) minmax(420px,1.5fr) auto;
+  align-items:start;
+  gap:38px;
+  padding:42px clamp(24px,5vw,92px);
+  color:#69707a;
+  background:#f1eee7;
+  border-top:1px solid #ded8cc;
+  font-family:"Yu Gothic","Hiragino Kaku Gothic ProN",Meiryo,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+}
+.common-footer-brand p{margin:14px 0 0;font-size:16px;line-height:1.65}
+.common-footer-links{display:grid;grid-template-columns:repeat(2,minmax(150px,1fr));gap:8px 28px;font-size:16px}
+.common-footer-links a{width:max-content;border-bottom:1px solid transparent}
+.common-footer-links a:hover,.common-footer-links a:focus-visible{color:#14233b;border-bottom-color:#b08a43}
+.common-site-footer>small{color:#69707a;font-size:16px}
+body.public-body>.common-site-footer .common-footer-brand p,
+body.public-body>.common-site-footer .common-footer-links,
+body.public-body>.common-site-footer>small{font-size:16px}
+body.public-body dialog .field>span,
+body.public-body dialog .check,
+body.public-body dialog input,
+body.public-body dialog select,
+body.public-body dialog textarea,
+body.public-body dialog button{font-size:16px}
+
+@media(max-width:760px){
+  .common-header-main{height:62px;min-height:62px;grid-template-columns:1fr auto auto auto;gap:4px;padding:0 12px}
+  .common-header-main .common-brand{font-size:20px}
+  .common-brand small{display:inline}
+  .common-member-menu{grid-column:auto;height:62px}
+  .common-brand i{height:29px}
+  .common-search{width:44px;height:44px;padding:0;justify-content:center;border:0;background:transparent}
+  .common-search span{display:none}
+  .common-menu-button{display:block;grid-column:auto}
+  .common-global-nav{
+    position:absolute;
+    top:62px;
+    right:0;
+    left:0;
+    height:auto;
+    display:none;
+    align-items:flex-start;
+    flex-direction:column;
+    gap:0;
+    padding:10px 16px;
+    border-bottom:1px solid #d9d3c7;
+    box-shadow:0 16px 40px rgba(20,35,59,.1);
+  }
+  .common-global-nav.open,.common-global-nav.is-open{display:flex}
+  .common-global-nav a{width:100%;min-height:44px;border-bottom:1px solid #eee}
+  .common-member-menu .common-member-panel{right:-52px}
+  .common-site-footer{grid-template-columns:1fr;gap:15px;padding:36px 22px}
+  .common-footer-links{grid-template-columns:1fr 1fr;gap:10px 16px}
+  .common-footer-links a{width:auto}
+}
+
+@media(max-width:390px){
+  .common-brand{font-size:18px}
+  .common-footer-links{grid-template-columns:1fr}
+}
+
+@media(max-width:480px){
+  .common-site-footer .common-footer-links{grid-template-columns:1fr}
+}

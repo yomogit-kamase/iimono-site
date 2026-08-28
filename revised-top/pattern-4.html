@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>パターン4｜いいモノ.com 今月の選品</title>
+  <meta name="description" content="複数ジャンルのいいモノを、つくり手・専門家・編集部の言葉とともに紹介する選品メディア。">
+  <link rel="stylesheet" href="pattern-4.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="pattern-4.html" aria-label="いいモノ.com トップ"><i aria-hidden="true"></i><strong>いいモノ<span>.com</span></strong></a>
+      <button class="search-button" type="button" aria-label="商品を検索"><span>商品・ブランドを検索</span><b>⌕</b></button>
+      <nav class="utility" aria-label="パターン切替"><a href="index.html">案1</a><a href="pattern-2.html">案2</a><a href="pattern-3.html">案3</a></nav>
+      <div class="member-menu">
+        <button class="member-trigger" type="button" aria-expanded="false" aria-controls="member-panel">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3.5"></circle><path d="M5.5 20c.5-4 2.7-6 6.5-6s6 2 6.5 6"></path></svg>
+          <span>会員</span>
+        </button>
+        <div class="member-panel" id="member-panel" hidden>
+          <p>会員メニュー</p>
+          <a class="member-login" href="#">ログイン</a>
+          <a class="member-register" href="#">新規会員登録</a>
+          <nav aria-label="会員向けメニュー"><a href="#">お気に入り</a><a href="#">閲覧履歴</a><a href="#">会員情報</a></nav>
+        </div>
+      </div>
+      <button class="menu-button" type="button" aria-expanded="false">メニュー</button>
+    </div>
+    <nav class="audience" aria-label="ページ内メニュー">
+      <a href="#categories">カテゴリ</a>
+      <a href="#products">今月のいいモノ</a>
+      <a href="#producer-picks">つくり手</a>
+      <a href="#expert-picks">専門家</a>
+      <a href="#attention">注目</a>
+      <a href="#featured">認証商品</a>
+      <a href="#editorial">特集</a>
+      <a href="#areas">エリア</a>
+      <a href="#promise">選定基準</a>
+    </nav>
+  </header>
+
+  <aside class="site-notice" aria-label="お知らせ">
+    <div class="notice-content">
+      <div class="notice-heading"><strong>お知らせ</strong><small>デモ表示</small></div>
+      <div class="notice-items">
+        <a href="notices.html#notice-20260815"><time datetime="2026-08-15">2026年8月15日</time><span>「今月のいいモノ」8月の選品を公開しました</span></a>
+        <a href="notices.html#notice-20260810"><time datetime="2026-08-10">2026年8月10日</time><span>いいモノ認証セレクションに新しい商品を追加しました</span></a>
+        <a href="notices.html#notice-20260801"><time datetime="2026-08-01">2026年8月1日</time><span>会員向け「お気に入り」機能のデモを公開しました</span></a>
+      </div>
+      <a class="notice-all" href="notices.html">お知らせ一覧を見る →</a>
+    </div>
+    <button class="notice-close" type="button" aria-label="お知らせを閉じる">×</button>
+  </aside>
+
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-grid" aria-hidden="true">
+        <img class="tile t1" src="../iimono-site/full-site/assets/images/ii-mo-no/hero-sweets-v2.png" alt="">
+        <img class="tile t2" src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="">
+        <img class="tile t3" src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="">
+        <img class="tile t4" src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="">
+        <img class="tile t5" src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="">
+        <img class="tile t6" src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="">
+      </div>
+      <div class="hero-panel">
+        <p>2026年8月の選品</p>
+        <h1 id="hero-title"><span>いいモノには、</span><span>選ぶ理由がある。</span></h1>
+        <span>つくり手・専門家・編集部の言葉を、選ぶ手がかりに。</span>
+        <a href="#products">今月のいいモノを見る</a>
+      </div>
+    </section>
+
+    <section class="category-section" id="categories">
+      <div class="section-bar standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>カテゴリから探す</h2></div><p class="standard-section-description">食品、暮らしの道具、ファッションなど、商品ジャンルから探せます。</p><div class="category-toggle" role="group" aria-label="カテゴリ表示の切り替え"><button class="is-active" type="button" data-category-view="all" aria-pressed="true">複数カテゴリ</button><button type="button" data-category-view="sweets" aria-pressed="false">スイーツのみ</button></div></div><a class="category-all-link" href="#products">すべて見る →</a></div>
+      <div class="category-grid main-category-grid category-view" data-category-panel="all">
+        <a href="#products"><img src="../iimono-site/full-site/assets/images/ii-mo-no/fruit-jelly.jpg" alt="食品・スイーツ"><span>食品・スイーツ</span></a>
+        <a href="#products"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="生活雑貨・インテリア"><span>生活雑貨・<br>インテリア</span></a>
+        <a href="#products"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="ファッション"><span>ファッション</span></a>
+        <a href="#products"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="美容・コスメ"><span>美容・コスメ</span></a>
+        <a href="#products"><img src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="工芸品・地域産品"><span>工芸品・地域産品</span></a>
+        <a href="#products"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="家電・デジタル"><span>家電・デジタル</span></a>
+        <a href="#products"><img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="趣味・アウトドア"><span>趣味・アウトドア</span></a>
+      </div>
+      <div class="category-grid sweets-category-grid category-view" data-category-panel="sweets" hidden>
+        <a href="#products"><img src="../iimono-site/full-site/assets/images/ii-mo-no/tigre-assort.jpg" alt="焼き菓子"><span>焼き菓子</span></a>
+        <a href="#products"><img src="../iimono-site/full-site/assets/images/ii-mo-no/bonbon-chocolat.jpg" alt="チョコレート"><span>チョコレート</span></a>
+        <a href="#products"><img src="../iimono-site/full-site/assets/images/ii-mo-no/fruit-jelly.jpg" alt="ゼリー・涼菓"><span>ゼリー・涼菓</span></a>
+        <a href="#products"><img src="../iimono-site/full-site/assets/images/ii-mo-no/thank-you-pudding.jpg" alt="プリン・生菓子"><span>プリン・生菓子</span></a>
+        <a href="#products"><img src="../iimono-site/full-site/assets/images/ii-mo-no/brandy-cake.jpg" alt="ケーキ"><span>ケーキ</span></a>
+        <a href="#products"><img src="../iimono-site/full-site/assets/images/ii-mo-no/dorayaki.jpg" alt="和菓子"><span>和菓子</span></a>
+      </div>
+    </section>
+
+    <section class="products section" id="products">
+      <div class="section-title standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>今月のいいモノ</h2><button class="logic-button" type="button" data-logic="monthly">表示ロジック</button></div><p class="standard-section-description">季節や暮らしのテーマに合わせて、編集部が今月選んだ商品を紹介します。</p></div><a href="../search.html">今月の選品をすべて見る →</a></div>
+      <div class="product-grid auto-scroll-grid" tabindex="0" aria-label="今月のいいモノ。横にスクロールできます">
+        <article class="item"><a href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/fruit-jelly.jpg" alt="フルーツミックスゼリー"></a><p>食品</p><h3>果実を味わう、フルーツミックスゼリー</h3><strong>¥3,240 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>季節感と甘酸味のバランスが秀逸。</p><p><b class="comment-label label-producer">生産者</b>果実ごとの食感と香りを残して仕上げました。</p><p><b class="comment-label label-editorial">編集部</b>夏の贈り物として見た目にも涼やかな一品です。</p></div></article>
+        <article class="item"><a href="../product.html"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="山の煎茶"></a><p>飲料</p><h3>香りをひらく、山の煎茶</h3><strong>¥2,160 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>渋みと甘みの調和が美しい。</p><p><b class="comment-label label-producer">生産者</b>茶葉の香りが立つ火入れを心がけています。</p><p><b class="comment-label label-editorial">編集部</b>毎日の一服にも贈り物にも選びやすい煎茶です。</p></div></article>
+        <article class="item"><a href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/bonbon-chocolat.jpg" alt="ボンボンショコラ"></a><p>食品</p><h3>一粒ずつ味わう、ボンボンショコラ</h3><strong>¥3,800 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>香りと口溶けの違いを一粒ずつ楽しめます。</p><p><b class="comment-label label-producer">生産者</b>素材ごとに温度と時間を細かく調整しています。</p><p><b class="comment-label label-editorial">編集部</b>温度設計まで行き届いた仕上がり。</p></div></article>
+        <article class="item"><a href="../product.html"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="小型オーディオ"></a><p>家電・デジタル</p><h3>生活になじむ、小さなオーディオ</h3><strong>¥12,800 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>声と楽器の輪郭を自然に再現します。</p><p><b class="comment-label label-producer">生産者</b>小さな部屋でも扱いやすい設計を目指しました。</p><p><b class="comment-label label-editorial">編集部</b>置き場所を選ばない端正な設計。</p></div></article>
+        <article class="item"><a href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/thank-you-pudding.jpg" alt="ありがとうプリン"></a><p>ギフト</p><h3>感謝を贈る、ありがとうプリン</h3><strong>¥3,480 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>卵の風味となめらかな口当たりが調和しています。</p><p><b class="comment-label label-producer">生産者</b>世代を問わず楽しめる味に仕上げました。</p><p><b class="comment-label label-editorial">編集部</b>気負わず感謝を伝えられる贈り物です。</p></div></article>
+        <article class="item"><a href="../product.html"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="帆布のデイパック"></a><p>趣味・アウトドア</p><h3>使うほどになじむ、帆布のデイパック</h3><strong>¥9,800 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>荷物の重さが偏りにくい実用的な設計です。</p><p><b class="comment-label label-producer">生産者</b>使い込むほど帆布の風合いが深まります。</p><p><b class="comment-label label-editorial">編集部</b>街でも自然の中でも使いやすい容量です。</p></div></article>
+        <article class="item"><a href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/brandy-cake.jpg" alt="ブランデーケーキ"></a><p>食品</p><h3>芳醇に香る、ブランデーケーキ</h3><strong>¥4,280 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>香りと甘さの余韻をゆっくり楽しめます。</p><p><b class="comment-label label-producer">生産者</b>時間とともに深まる香りを目指しました。</p><p><b class="comment-label label-editorial">編集部</b>少量ずつ味わいたい大人の贈り物です。</p></div></article>
+        <article class="item"><a href="../product.html"><img src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="手仕事の花器"></a><p>生活雑貨</p><h3>一輪を美しく見せる、手仕事の花器</h3><strong>¥6,600 <small>税込</small></strong><div class="item-comments"><p><b class="comment-label label-expert">専門家</b>一輪でも安定して飾れる重心設計です。</p><p><b class="comment-label label-producer">生産者</b>素材の表情を残して一つずつ仕上げています。</p><p><b class="comment-label label-editorial">編集部</b>素材の表情と余白が豊かです。</p></div></article>
+      </div>
+    </section>
+
+    <section class="people-section producer-picks section" id="producer-picks">
+      <div class="section-title standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>つくり手から選ぶ</h2></div><p class="standard-section-description">素材や技術、ものづくりに込めた考えを、つくり手の言葉とともに紹介します。</p></div><a href="../search.html">すべてのつくり手を見る →</a></div>
+      <div class="people-product-grid">
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/producer-ceramic.png" alt="陶磁器を手にする生産者 山本和弘さん"><div><span class="person-kind producer-kind">生産者</span><h3>山本 和弘</h3><small>有田・山本窯 三代目</small></div></div><blockquote>「毎日手に取ってもらえる軽さと、料理を受け止める白にこだわりました。」</blockquote><a class="person-linked-product" href="../product.html"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&amp;fit=crop&amp;w=420&amp;q=88" alt="白磁の器"><span><small>この人の商品</small><strong>毎日の料理を受け止める、白磁の器</strong><b>¥4,400 税込</b></span><i>→</i></a></article>
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/producer-tea.png" alt="茶畑で茶葉を持つ生産者 高橋雅人さん"><div><span class="person-kind producer-kind">生産者</span><h3>高橋 雅人</h3><small>静岡・高橋茶園 園主</small></div></div><blockquote>「山の寒暖差がつくる香りを残すため、茶葉を深く蒸しすぎず仕上げています。」</blockquote><a class="person-linked-product" href="../product.html"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=420&amp;q=88" alt="山の煎茶"><span><small>この人の商品</small><strong>香りをひらく、山の煎茶</strong><b>¥2,160 税込</b></span><i>→</i></a></article>
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/producer-botanical.png" alt="植物素材を持つ生産者 森田梓さん"><div><span class="person-kind producer-kind">生産者</span><h3>森田 梓</h3><small>北海道・NORTH FOREST</small></div></div><blockquote>「北海道の森を思い出せるよう、枝葉の青さまで感じる香りに整えました。」</blockquote><a class="person-linked-product" href="../product.html"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=420&amp;q=88" alt="森の香りのハンドバーム"><span><small>この人の商品</small><strong>森の香りをまとう、ハンドバーム</strong><b>¥3,080 税込</b></span><i>→</i></a></article>
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/producer-canvas.png" alt="帆布を縫製する生産者 佐々木隆さん"><div><span class="person-kind producer-kind">生産者</span><h3>佐々木 隆</h3><small>倉敷・帆布工房</small></div></div><blockquote>「使い込むほど手になじみ、その人だけの表情になる帆布を選んでいます。」</blockquote><a class="person-linked-product" href="../product.html"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=420&amp;q=88" alt="帆布のデイパック"><span><small>この人の商品</small><strong>使うほどになじむ、帆布のデイパック</strong><b>¥9,800 税込</b></span><i>→</i></a></article>
+      </div>
+    </section>
+
+    <section class="people-section expert-picks section" id="expert-picks">
+      <div class="section-title standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>専門家の視点から選ぶ</h2><button class="logic-button" type="button" data-logic="expert">表示ロジック</button></div><p class="standard-section-description">専門分野から見た評価や着眼点を、商品とともに紹介します。</p></div><a href="../search.html">すべての専門家を見る →</a></div>
+      <div class="people-product-grid">
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/expert-pastry.png" alt="試食用スプーンとノートを持つ専門家 鈴木雅人さん"><div><span class="person-kind expert-kind">専門家</span><h3>鈴木 雅人</h3><small>パティシエ</small></div></div><blockquote>「外側の香ばしさと中心のしっとり感に、焼成技術の確かさを感じます。」</blockquote><a class="person-linked-product" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/tigre-assort.jpg" alt="ティグレアソート"><span><small>評価した商品</small><strong>香ばしいチョコレートのティグレアソート</strong><b>¥2,880 税込</b></span><i>→</i></a></article>
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/expert-wagashi.png" alt="和菓子を評価する専門家 佐藤和子さん"><div><span class="person-kind expert-kind">専門家</span><h3>佐藤 和子</h3><small>和菓子職人</small></div></div><blockquote>「透明感のある見た目と甘酸味のバランスがよく、季節感の伝わる涼菓です。」</blockquote><a class="person-linked-product" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/fruit-jelly.jpg" alt="フルーツミックスゼリー"><span><small>評価した商品</small><strong>果実を味わう、フルーツミックスゼリー</strong><b>¥3,240 税込</b></span><i>→</i></a></article>
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/expert-writer.png" alt="取材ノートを持つ専門家 山田美咲さん"><div><span class="person-kind expert-kind">専門家</span><h3>山田 美咲</h3><small>フードライター</small></div></div><blockquote>「口どけの温度設計がよく、それぞれの風味が輪郭を失わず広がります。」</blockquote><a class="person-linked-product" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/bonbon-chocolat.jpg" alt="ボンボンショコラ"><span><small>評価した商品</small><strong>一粒ずつ味わう、ボンボンショコラ</strong><b>¥3,800 税込</b></span><i>→</i></a></article>
+        <article class="person-product-card"><div class="person-profile"><img src="assets/people/expert-science.png" alt="食品分析室で評価する専門家 田中健一さん"><div><span class="person-kind expert-kind">専門家</span><h3>田中 健一</h3><small>食品科学者</small></div></div><blockquote>「生地のきめと餡の水分量がよく、素朴ながら完成度の高い定番菓子です。」</blockquote><a class="person-linked-product" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/dorayaki.jpg" alt="老舗のどら焼き"><span><small>評価した商品</small><strong>毎日食べたくなる、老舗のどら焼き</strong><b>¥2,400 税込</b></span><i>→</i></a></article>
+      </div>
+    </section>
+
+    <section class="new-arrivals section" id="attention">
+      <div class="section-title standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>注目のいいモノ</h2><button class="logic-button" type="button" data-logic="attention">表示ロジック</button></div><p class="standard-section-description">新しいコメントや記事など、情報が更新された商品を紹介します。</p></div></div>
+      <div class="new-grid auto-scroll-grid" tabindex="0" aria-label="注目のいいモノ。横にスクロールできます">
+        <article class="feature-card"><a class="product-photo" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/thank-you-pudding.jpg" alt="ありがとうプリン"></a><div class="product-info"><p>食品・スイーツ</p><h3>感謝を贈る、ありがとうプリン</h3><strong>¥3,480 <small>税込</small></strong></div><div class="voice-tabs"><p><b class="comment-label label-expert">専門家</b>なめらかな口当たりと、卵の風味のバランスが良好です。</p><p><b class="comment-label label-producer">生産者</b>贈る相手を選ばない、やさしい甘さに仕上げました。</p><p><b class="comment-label label-editorial">編集部</b>感謝を伝える贈り物として選びやすい一品です。</p></div><a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a></article>
+        <article class="feature-card"><a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="白磁の器"></a><div class="product-info"><p>生活雑貨・インテリア</p><h3>毎日の料理を受け止める、白磁の器</h3><strong>¥4,400 <small>税込</small></strong></div><div class="voice-tabs"><p><b class="comment-label label-expert">専門家</b>盛り付けやすさと収納性を両立した形です。</p><p><b class="comment-label label-producer">生産者</b>料理を引き立てる白と、手になじむ薄さを追求しました。</p><p><b class="comment-label label-editorial">編集部</b>和洋を問わず日常使いしやすい器です。</p></div><a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a></article>
+        <article class="feature-card"><a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="小型オーディオ"></a><div class="product-info"><p>家電・デジタル</p><h3>生活になじむ、小さなオーディオ</h3><strong>¥12,800 <small>税込</small></strong></div><div class="voice-tabs"><p><b class="comment-label label-expert">専門家</b>小型ながら声と楽器の輪郭を自然に再現します。</p><p><b class="comment-label label-producer">生産者</b>置く場所を選ばないサイズと操作性を大切にしました。</p><p><b class="comment-label label-editorial">編集部</b>初めての一台として検討しやすいモデルです。</p></div><a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a></article>
+        <article class="feature-card"><a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1493106641515-6b5631de4bb9?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="手仕事の花器"></a><div class="product-info"><p>工芸品・地域産品</p><h3>一輪を美しく見せる、手仕事の花器</h3><strong>¥6,600 <small>税込</small></strong></div><div class="voice-tabs"><p><b class="comment-label label-expert">専門家</b>口径と重心の設計により、一輪でも安定して飾れます。</p><p><b class="comment-label label-producer">生産者</b>素材ごとの表情を残しながら、一つずつ仕上げています。</p><p><b class="comment-label label-editorial">編集部</b>小さな空間にも取り入れやすい静かな佇まいです。</p></div><a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a></article>
+        <article class="feature-card"><a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="帆布のデイパック"></a><div class="product-info"><p>趣味・アウトドア</p><h3>使うほどになじむ、帆布のデイパック</h3><strong>¥9,800 <small>税込</small></strong></div><div class="voice-tabs"><p><b class="comment-label label-expert">専門家</b>荷重が偏りにくく、日常に必要な容量を確保しています。</p><p><b class="comment-label label-producer">生産者</b>使い込んだ帆布の風合いを楽しめるよう仕立てました。</p><p><b class="comment-label label-editorial">編集部</b>街と小旅行の両方で使いやすいサイズです。</p></div><a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a></article>
+        <article class="feature-card"><a class="product-photo" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/brandy-cake.jpg" alt="ブランデーケーキ"></a><div class="product-info"><p>食品・スイーツ</p><h3>芳醇に香る、ブランデーケーキ</h3><strong>¥4,280 <small>税込</small></strong></div><div class="voice-tabs"><p><b class="comment-label label-expert">専門家</b>香りと甘さの余韻をゆっくり楽しめる仕上がりです。</p><p><b class="comment-label label-producer">生産者</b>時間とともに生地へ香りがなじむよう焼き上げました。</p><p><b class="comment-label label-editorial">編集部</b>少量ずつ味わいたい大人の贈り物です。</p></div><a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a></article>
+      </div>
+    </section>
+
+    <section class="featured section" id="featured">
+      <div class="section-title standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>いいモノ認証セレクション</h2><button class="logic-button" type="button" data-logic="certification">表示ロジック</button></div><p class="standard-section-description">いいモノ認証機関による認証を、公開情報で確認できる商品を紹介します。</p></div></div>
+      <div class="featured-grid auto-scroll-grid" tabindex="0" aria-label="いいモノ認証セレクション。横にスクロールできます">
+        <article class="feature-card">
+          <a class="product-photo" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/tigre-assort.jpg" alt="ティグレアソート"></a>
+          <div class="product-info"><div class="cert-chip">2026年度認証</div><p>東京｜焼き菓子</p><h3>香ばしいチョコレートの<br>ティグレアソート</h3><strong>¥2,880 <small>税込</small></strong></div>
+          <div class="voice-tabs"><p><b class="comment-label label-producer">生産者</b>焦がしバターの香りを大切に焼き上げました。</p><p><b class="comment-label label-expert">専門家</b>バターとチョコレートの余韻が調和しています。</p><p><b class="comment-label label-editorial">編集部</b>贈り物にも選びやすい端正な一箱です。</p></div>
+          <a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a>
+        </article>
+        <article class="feature-card">
+          <a class="product-photo" href="../product.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/fruit-jelly.jpg" alt="フルーツミックスゼリー"></a>
+          <div class="product-info"><div class="cert-chip">2026年度認証</div><p>岡山｜食品・スイーツ</p><h3>果実を味わう、<br>フルーツミックスゼリー</h3><strong>¥3,240 <small>税込</small></strong></div>
+          <div class="voice-tabs"><p><b class="comment-label label-producer">生産者</b>果実ごとの香りと食感を大切にしています。</p><p><b class="comment-label label-expert">専門家</b>甘酸味と食感の組み合わせが楽しめます。</p><p><b class="comment-label label-editorial">編集部</b>彩りがよく季節の贈り物に選びやすい一品。</p></div>
+          <a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a>
+        </article>
+        <article class="feature-card">
+          <a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="山の煎茶"></a>
+          <div class="product-info"><div class="cert-chip">2025年度認証</div><p>静岡｜飲料</p><h3>香りをひらく、<br>山の煎茶</h3><strong>¥2,160 <small>税込</small></strong></div>
+          <div class="voice-tabs"><p><b class="comment-label label-producer">生産者</b>茶葉の香りが立つ火入れを心がけています。</p><p><b class="comment-label label-expert">専門家</b>渋みと甘みの調和が美しい煎茶です。</p><p><b class="comment-label label-editorial">編集部</b>日常使いと贈り物の両方に選びやすいお茶です。</p></div>
+          <a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a>
+        </article>
+        <article class="feature-card">
+          <a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="白磁の器"></a>
+          <div class="product-info"><div class="cert-chip">2026年度認証</div><p>佐賀・有田｜生活雑貨</p><h3>食卓に余白をつくる、<br>白磁の器</h3><strong>¥4,400 <small>税込</small></strong></div>
+          <div class="voice-tabs"><p><b class="comment-label label-producer">生産者</b>料理を受け止める白を追求しました。</p><p><b class="comment-label label-expert">専門家</b>盛り付けやすさと収納性を両立した形です。</p><p><b class="comment-label label-editorial">編集部</b>和洋を問わず毎日使える器です。</p></div>
+          <a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a>
+        </article>
+        <article class="feature-card">
+          <a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="森の香りのハンドバーム"></a>
+          <div class="product-info"><div class="cert-chip">2025年度認証</div><p>北海道｜美容・ケア</p><h3>森の香りをまとう、<br>ハンドバーム</h3><strong>¥3,080 <small>税込</small></strong></div>
+          <div class="voice-tabs"><p><b class="comment-label label-producer">生産者</b>北海道の森を思わせる香りに。</p><p><b class="comment-label label-expert">専門家</b>香りの残り方が穏やかで日常使いしやすい処方です。</p><p><b class="comment-label label-editorial">編集部</b>べたつきにくく日常使いしやすい一品。</p></div>
+          <a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a>
+        </article>
+        <article class="feature-card">
+          <a class="product-photo" href="../product.html"><img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="上質な日常着"></a>
+          <div class="product-info"><div class="cert-chip">2025年度認証</div><p>愛知・尾州｜ファッション</p><h3>季節を越えて着る、<br>上質な日常着</h3><strong>¥19,800 <small>税込</small></strong></div>
+          <div class="voice-tabs"><p><b class="comment-label label-producer">生産者</b>織りの表情を残した生地です。</p><p><b class="comment-label label-expert">専門家</b>動きやすさと生地の立体感を両立しています。</p><p><b class="comment-label label-editorial">編集部</b>仕事と休日の両方で頼れる一着。</p></div>
+          <a class="buy-link" href="../product.html">商品と購入先を見る <span>→</span></a>
+        </article>
+      </div>
+    </section>
+
+    <section class="editorial-section section" id="editorial">
+      <div class="section-title standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>特集</h2><button class="logic-button" type="button" data-logic="feature">表示ロジック</button></div><p class="standard-section-description">季節や用途、贈る場面に合わせて、選ぶときに知りたいポイントを整理しました。</p></div></div>
+      <div class="article-grid">
+        <article><a href="../article.html"><img src="../iimono-site/full-site/assets/images/ii-mo-no/summer-sweets-mv.jpg" alt="夏に贈りたい涼やかな菓子"></a><div><p>季節の贈り物</p><h3>夏に贈りたい、涼やかな菓子</h3><span>味わい、日持ち、届け方から選ぶポイントを紹介します。</span><a href="../article.html">記事を読む →</a></div></article>
+        <article><a href="../article.html"><img src="https://images.unsplash.com/photo-1610701596007-11502861dcfa?auto=format&amp;fit=crop&amp;w=900&amp;q=88" alt="毎日使いたくなる白い器"></a><div><p>暮らしの道具</p><h3>毎日使いたくなる、白い器の選び方</h3><span>形、重さ、収納性。日常の使いやすさを編集部が整理。</span><a href="../article.html">記事を読む →</a></div></article>
+        <article><a href="../article.html"><img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&amp;fit=crop&amp;w=780&amp;q=88" alt="小型オーディオの選び方"></a><div><p>家電・デジタル</p><h3>部屋になじむ、小型オーディオ</h3><span>サイズ、音の特徴、置き場所から、自分に合う一台を探します。</span><a href="../article.html">記事を読む →</a></div></article>
+      </div>
+    </section>
+
+    <section class="area-section section" id="areas">
+      <div class="section-title standard-section-title"><div class="standard-heading-copy"><div class="standard-heading-row"><h2>エリアから探す</h2></div><p class="standard-section-description">生産地やブランドがものづくりを続ける地域から商品を探せます。</p></div></div>
+      <div class="area-grid">
+        <a href="#products"><img src="https://unsplash.com/photos/sDkRuHQ-r1s/download?force=true&amp;w=1200" alt="北海道・美瑛の青い池"><div><b>北海道</b><span>18商品</span></div></a>
+        <a href="#products"><img src="https://unsplash.com/photos/J-iWe0IBKwM/download?force=true&amp;w=1200" alt="青森の山と海を望む道"><div><b>東北</b><span>22商品</span></div></a>
+        <a href="#products"><img src="https://unsplash.com/photos/MBfKkA2V4PI/download?force=true&amp;w=1200" alt="東京の街並み"><div><b>関東</b><span>46商品</span></div></a>
+        <a href="#products"><img src="https://unsplash.com/photos/-ROA3IS-blY/download?force=true&amp;w=1200" alt="石川・金沢の兼六園"><div><b>北陸・甲信越</b><span>31商品</span></div></a>
+        <a href="#products"><img src="https://unsplash.com/photos/twiQoIuBIBM/download?force=true&amp;w=1200" alt="愛知から望む富士山と湖"><div><b>東海</b><span>27商品</span></div></a>
+        <a href="#products"><img src="https://unsplash.com/photos/Ul5nQ-0zCdE/download?force=true&amp;w=1200" alt="京都の寺院"><div><b>近畿</b><span>42商品</span></div></a>
+        <a href="#products"><img src="https://unsplash.com/photos/5nmKOTKnkc0/download?force=true&amp;w=1200" alt="広島・尾道から望む瀬戸内海"><div><b>中国・四国</b><span>25商品</span></div></a>
+        <a href="#products"><img src="https://unsplash.com/photos/g7Y1TgK-vhU/download?force=true&amp;w=1200" alt="沖縄・宮古島の海岸"><div><b>九州・沖縄</b><span>36商品</span></div></a>
+      </div>
+    </section>
+
+    <section class="promise" id="promise"><div><p>いいモノの選定基準</p><h2>選ぶ理由を、<br>確かな情報とともに。</h2></div><p>商品の品質や特徴、つくり手の情報を、公式情報と編集部の確認をもとに整理します。認証情報、専門家の評価、利用者の声が確認できる場合は、出典を明記して紹介します。</p><a href="../article.html">選定基準を詳しく見る →</a></section>
+  </main>
+
+  <dialog class="logic-dialog" id="logic-dialog" aria-labelledby="logic-dialog-title">
+    <button class="logic-close" type="button" aria-label="説明を閉じる">×</button>
+    <p class="logic-eyebrow">デモサイト・表示ルール</p>
+    <h2 id="logic-dialog-title"></h2>
+    <div id="logic-dialog-body"></div>
+    <button class="logic-confirm" type="button">閉じる</button>
+  </dialog>
+
+  <footer><a class="logo footer-logo" href="pattern-4.html"><i aria-hidden="true"></i><strong>いいモノ<span>.com</span></strong></a><p>商品と、それを語る人に出会う場所。</p><small>© 2026 いいモノ.com — デザイン試作・パターン4</small></footer>
+  <script>
+    const menu=document.querySelector('.menu-button');
+    const audience=document.querySelector('.audience');
+    menu.addEventListener('click',()=>{const open=menu.getAttribute('aria-expanded')==='true';menu.setAttribute('aria-expanded',String(!open));audience.classList.toggle('is-open',!open);});
+    const sectionNavLinks=[...audience.querySelectorAll('a[href^="#"]')];
+    sectionNavLinks.forEach(link=>{const section=document.querySelector(link.getAttribute('href'));link.hidden=!section||section.hidden;link.addEventListener('click',()=>{menu.setAttribute('aria-expanded','false');audience.classList.remove('is-open');});});
+    if('IntersectionObserver' in window){const sectionObserver=new IntersectionObserver(entries=>{const visible=entries.filter(entry=>entry.isIntersecting).sort((a,b)=>a.boundingClientRect.top-b.boundingClientRect.top)[0];if(!visible)return;sectionNavLinks.forEach(link=>link.classList.toggle('active',link.getAttribute('href')===`#${visible.target.id}`));},{rootMargin:'-28% 0px -62% 0px',threshold:0});sectionNavLinks.forEach(link=>{const section=document.querySelector(link.getAttribute('href'));if(section)sectionObserver.observe(section);});}
+    const memberMenu=document.querySelector('.member-menu');
+    const memberTrigger=document.querySelector('.member-trigger');
+    const memberPanel=document.querySelector('.member-panel');
+    memberTrigger.addEventListener('click',()=>{const open=memberTrigger.getAttribute('aria-expanded')==='true';memberTrigger.setAttribute('aria-expanded',String(!open));memberPanel.hidden=open;});
+    document.addEventListener('click',event=>{if(!memberMenu.contains(event.target)){memberTrigger.setAttribute('aria-expanded','false');memberPanel.hidden=true;}});
+    document.addEventListener('keydown',event=>{if(event.key==='Escape'){memberTrigger.setAttribute('aria-expanded','false');memberPanel.hidden=true;memberTrigger.focus();}});
+    memberPanel.querySelectorAll('a').forEach(link=>link.addEventListener('click',event=>event.preventDefault()));
+    const siteNotice=document.querySelector('.site-notice');
+    document.querySelector('.notice-close').addEventListener('click',()=>siteNotice.remove());
+    document.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>siteNotice?.remove()));
+    const categoryAllLink=document.querySelector('.category-all-link');
+    document.querySelectorAll('.category-toggle button').forEach(button=>button.addEventListener('click',()=>{const view=button.dataset.categoryView;document.querySelectorAll('.category-toggle button').forEach(item=>{const active=item===button;item.classList.toggle('is-active',active);item.setAttribute('aria-pressed',String(active));});document.querySelectorAll('.category-view').forEach(panel=>panel.hidden=panel.dataset.categoryPanel!==view);categoryAllLink.textContent=view==='sweets'?'スイーツをすべて見る →':'すべて見る →';}));
+    const commentCards=[...document.querySelectorAll('#products .item,#attention .feature-card,#featured .feature-card')];
+    const activateComment=(rotator,index)=>{const tabs=[...rotator.querySelectorAll('[role="tab"]')];const panels=[...rotator.querySelectorAll('[role="tabpanel"]')];tabs.forEach((tab,itemIndex)=>{const active=itemIndex===index;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1;});panels.forEach((panel,itemIndex)=>panel.hidden=itemIndex!==index);rotator.dataset.active=String(index);};
+    commentCards.forEach((card,cardIndex)=>{const source=card.querySelector('.voice-tabs,.item-comments,.comment-line');if(!source)return;const entries=source.matches('.comment-line')?[source]:[...source.children];const rotator=document.createElement('div');rotator.className='comment-rotator';const tabs=document.createElement('div');tabs.className='comment-tabs';tabs.setAttribute('role','tablist');tabs.setAttribute('aria-label','コメントの表示切り替え');const panels=document.createElement('div');panels.className='comment-panels';entries.forEach((entry,entryIndex)=>{const label=entry.querySelector('.comment-label')?.textContent.trim()||'コメント';const kind=label==='専門家'?'expert':label==='生産者'?'producer':'editorial';const clone=entry.cloneNode(true);clone.querySelector('.comment-label')?.remove();const text=clone.textContent.trim();const tab=document.createElement('button');const tabId=`comment-tab-${cardIndex}-${entryIndex}`;const panelId=`comment-panel-${cardIndex}-${entryIndex}`;tab.type='button';tab.id=tabId;tab.dataset.kind=kind;tab.setAttribute('role','tab');tab.setAttribute('aria-controls',panelId);tab.textContent=label;tab.addEventListener('click',()=>activateComment(rotator,entryIndex));const panel=document.createElement('p');panel.id=panelId;panel.className='comment-panel';panel.setAttribute('role','tabpanel');panel.setAttribute('aria-labelledby',tabId);panel.textContent=text;tabs.append(tab);panels.append(panel);});rotator.append(tabs,panels);source.replaceWith(rotator);activateComment(rotator,Math.floor(Math.random()*entries.length));});
+    if(!window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+      document.querySelectorAll('.auto-scroll-grid').forEach(autoScrollGrid=>{
+        let autoScrollTimer;
+        const moveCarousel=()=>{if(autoScrollGrid.scrollWidth<=autoScrollGrid.clientWidth)return;const firstCard=autoScrollGrid.firstElementChild;const gap=parseFloat(getComputedStyle(autoScrollGrid).columnGap)||0;const step=firstCard.getBoundingClientRect().width+gap;const atEnd=autoScrollGrid.scrollLeft+autoScrollGrid.clientWidth>=autoScrollGrid.scrollWidth-8;autoScrollGrid.scrollTo({left:atEnd?0:autoScrollGrid.scrollLeft+step,behavior:'smooth'});};
+        const startCarousel=()=>{clearInterval(autoScrollTimer);autoScrollTimer=setInterval(moveCarousel,10000);};
+        const stopCarousel=()=>clearInterval(autoScrollTimer);
+        autoScrollGrid.addEventListener('mouseenter',stopCarousel);
+        autoScrollGrid.addEventListener('mouseleave',startCarousel);
+        autoScrollGrid.addEventListener('focusin',stopCarousel);
+        autoScrollGrid.addEventListener('focusout',startCarousel);
+        startCarousel();
+      });
+    }
+    const logicContent={
+      attention:{title:'「注目のいいモノ」の表示ロジック',body:'<p>商品に新しい情報が加わったとき、更新から30日以内の商品を優先して表示します。</p><ol><li>専門家・生産者コメントの追加</li><li>口コミが一定件数に到達</li><li>編集部記事の公開・更新</li><li>新規商品の掲載</li><li>商品情報・購入先の更新</li></ol><p><b>重複排除：</b>認証セレクションまたは今月のいいモノに掲載中の商品は除外します。同じカテゴリは最大2商品、同じブランドは最大1商品です。</p>'},
+      certification:{title:'「認証セレクション」の表示ロジック',body:'<p>いいモノ認証機関による認証の事実を、公開情報で確認できる商品を掲載します。個別の認証理由は掲載条件にしません。</p><ol><li>認証機関と認証情報を確認できる</li><li>認証年度または認証期間を確認できる</li><li>現在購入できる商品を優先する</li></ol><p>個別の認証理由が公表されている場合のみ、出典とともに商品詳細で紹介します。</p><p><b>重複排除：</b>ここに掲載する商品は、注目のいいモノには重ねて表示しません。</p>'},
+      feature:{title:'「特集」の表示ロジック',body:'<p>編集部が任意のテーマで特集記事を作成し、公開設定にしたときに追加します。</p><ol><li>公開中の特集記事を表示する</li><li>編集部が指定した掲載順を優先する</li><li>終了日を設定した記事は期間終了後に非表示にする</li></ol>'},
+      expert:{title:'「専門家の視点から選ぶ」の表示ロジック',body:'<p>専門家コメントが一定数そろった段階で表示する将来想定のセクションです。初期運用では非表示にできます。</p><ol><li>公開可能な専門家コメントが3件以上ある</li><li>専門家の氏名と専門分野を確認できる</li><li>コメントの対象商品と出典を確認できる</li><li>編集部が公開設定にしたコメントを表示する</li></ol><p>同じ専門家やカテゴリに偏らないよう、掲載内容を調整します。</p>'},
+      monthly:{title:'「今月のいいモノ」の表示ロジック',body:'<p>季節や暮らしのテーマに合わせて、編集部が月単位で選ぶ商品です。月内は基本的に商品を固定します。</p><ol><li>今月の特集テーマに合っている</li><li>季節や贈る場面に適している</li><li>選ぶ理由を編集部が説明できる</li><li>カテゴリが偏らないよう調整する</li></ol><p><b>重複排除：</b>認証セレクションの商品を優先的に除外し、注目のいいモノとも重ならない商品を掲載します。</p>'}
+    };
+    const logicDialog=document.querySelector('#logic-dialog');
+    const logicTitle=document.querySelector('#logic-dialog-title');
+    const logicBody=document.querySelector('#logic-dialog-body');
+    document.querySelectorAll('.logic-button').forEach(button=>button.addEventListener('click',()=>{const content=logicContent[button.dataset.logic];logicTitle.textContent=content.title;logicBody.innerHTML=content.body;logicDialog.showModal();}));
+    document.querySelectorAll('.logic-close,.logic-confirm').forEach(button=>button.addEventListener('click',()=>logicDialog.close()));
+    logicDialog.addEventListener('click',event=>{if(event.target===logicDialog)logicDialog.close();});
+  </script>
+</body>
+</html>
