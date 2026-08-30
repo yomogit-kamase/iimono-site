@@ -147,7 +147,14 @@ document.querySelectorAll('[data-product-gallery]').forEach(gallery=>{
 const toast=document.getElementById('toast');
 function showToast(message){toast.textContent=message;toast.classList.add('show');setTimeout(()=>toast.classList.remove('show'),2400)}
 document.querySelectorAll('[data-toast]').forEach(button=>button.addEventListener('click',()=>showToast(button.dataset.toast)));
-document.querySelectorAll('[data-favorite]').forEach(button=>button.addEventListener('click',()=>{button.classList.toggle('selected');button.textContent=button.classList.contains('selected')?'♥ お気に入り登録済み':'♡ お気に入りに追加';showToast('お気に入りを更新しました')}));
+document.querySelectorAll('[data-favorite]').forEach(button=>button.addEventListener('click',()=>{
+  const selected=button.classList.toggle('selected');
+  button.setAttribute('aria-pressed',String(selected));
+  const label=button.querySelector('[data-favorite-label]');
+  if(label)label.textContent=selected?'お気に入り登録済み':'お気に入りに追加';
+  else button.textContent=selected?'♥ お気に入り登録済み':'♡ お気に入りに追加';
+  showToast('お気に入りを更新しました');
+}));
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{event.preventDefault();showToast('デモのため送信せず、入力内容を確認しました')}));
 
 document.querySelectorAll('[data-certification-year]').forEach(select=>{

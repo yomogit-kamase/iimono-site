@@ -492,7 +492,12 @@ td a{border-bottom:1px solid var(--gold)}
 .rating-bars>div{grid-template-columns:6.5em minmax(0,1fr) 3em;font-size:16px}
 .rating-bars>div>span{white-space:nowrap}
 /* Keep the secondary favorite action compact without reducing its tap target. */
-.product-detail-page .product-summary>.button[data-favorite]{width:fit-content;max-width:100%;min-height:44px;padding:8px 16px;font-size:16px;line-height:1.5;white-space:normal;text-align:center}
+.product-detail-page .product-summary>.button[data-favorite]{width:fit-content;max-width:100%;min-height:44px;padding:8px 16px;gap:8px;font-size:16px;line-height:1.5;white-space:normal;text-align:center;background:#fff4f8;border-color:#d46a91;color:var(--navy)}
+.favorite-heart{width:22px;height:22px;flex:0 0 22px;fill:none;stroke:#bf3c70;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.product-detail-page .product-summary>.button[data-favorite]:hover{background:#fce5ee;border-color:#bf3c70}
+.product-detail-page .product-summary>.button[data-favorite].selected{background:#fce5ee;border-color:#bf3c70}
+.favorite-button.selected .favorite-heart{fill:#bf3c70}
+.favorite-button:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 .product-information-nav a[aria-current]{background:var(--navy);color:#fff}
 .product-information-nav a:hover,.product-information-nav a:focus-visible{border-bottom-color:var(--gold)}
 .product-detail-page [id],.editorial-page [id]{scroll-margin-top:calc(var(--product-header-height,118px) + var(--product-nav-height,64px) + 24px)}
