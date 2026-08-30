@@ -328,7 +328,7 @@ td a{border-bottom:1px solid var(--gold)}
 .about-purchase-note{margin:30px 0 0;padding-top:24px;border-top:1px solid #647084;color:#f0f2f5}
 .about-trust{padding-block:68px}
 .about-trust h2{font-size:28px}
-.about-trust>div{display:grid;grid-template-columns:1fr 1fr;gap:52px;margin-top:28px}
+.about-trust>div{max-width:900px;margin-top:28px}
 .about-trust h3{font-size:20px}
 .about-trust p{margin:12px 0 0;color:var(--about-muted)}
 .about-cta{padding:62px 24px 70px;text-align:center;background:var(--about-paper);border-top:1px solid var(--about-line)}
