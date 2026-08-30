@@ -577,6 +577,5 @@ td a{border-bottom:1px solid var(--gold)}
 .rating-star button:focus-visible{outline:2px solid #17263e;outline-offset:2px;background:rgb(23 38 62 / 8%)}
 .rating-number{display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:#17263e}
 .rating-number button{min-width:44px;min-height:44px;border:1px solid #64748b;background:white;color:#17263e;font-size:20px;cursor:pointer}
-.rating-number input{width:88px;min-width:0;height:48px;text-align:center;font-size:22px;font-weight:700;padding:6px;appearance:textfield}
-.rating-number input::-webkit-inner-spin-button,.rating-number input::-webkit-outer-spin-button{appearance:none;margin:0}
+.rating-number select{width:120px;min-width:0;height:48px;font-size:20px;font-weight:700;padding:6px 12px}
 .rating-number .rating-clear{font-size:16px;padding:6px 8px;border-color:transparent;text-decoration:underline}

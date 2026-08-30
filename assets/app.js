@@ -1,9 +1,9 @@
-// Stars select half-points; the number field and step buttons preserve tenths.
+// Stars select half-points; the dropdown preserves tenths.
 document.querySelectorAll('[data-review-form]').forEach(form=>{
   const input=form.querySelector('[name="rating"]');
   const stars=[...form.querySelectorAll('.rating-star')];
   const paint=()=>{
-    const value=input.value===''?null:input.valueAsNumber;
+    const value=input.value===''?null:Number(input.value);
     const valid=value!==null&&input.validity.valid;
     stars.forEach((star,index)=>{
       star.style.setProperty('--rating-fill',valid?Math.max(0,Math.min(1,value-index))*100+'%':'0%');
@@ -20,16 +20,9 @@ document.querySelectorAll('[data-review-form]').forEach(form=>{
   form.querySelectorAll('[data-rating-value]').forEach(button=>{
     button.addEventListener('click',()=>setValue(Number(button.dataset.ratingValue)));
   });
-  form.querySelectorAll('[data-rating-adjust]').forEach(button=>{
-    button.addEventListener('click',()=>{
-      if(input.value!==''&&!input.validity.valid){input.reportValidity();return;}
-      const base=input.value===''?0:Math.round(input.valueAsNumber*10);
-      setValue(Math.max(0,Math.min(50,base+Number(button.dataset.ratingAdjust)))/10);
-    });
-  });
   form.querySelector('[data-rating-clear]')?.addEventListener('click',()=>setValue(null));
   input.addEventListener('input',paint);
-  input.addEventListener('change',()=>{if(input.value!==''&&input.validity.valid)input.value=input.valueAsNumber.toFixed(1);paint();});
+  input.addEventListener('change',paint);
   form.addEventListener('reset',()=>setTimeout(paint,0));
   paint();
 });
