@@ -477,6 +477,8 @@ td a{border-bottom:1px solid var(--gold)}
 }
 .product-information-nav{position:sticky;top:var(--product-header-height,118px);z-index:30;display:flex;background:#fff;border:1px solid var(--line);margin:0 0 32px;box-shadow:0 3px 12px #14233b08}
 .product-information-nav a{flex:1;min-width:0;padding:16px 8px;text-align:center;color:var(--navy);font-size:16px;font-weight:700;text-decoration:none;border-bottom:3px solid transparent}
+/* Keep the secondary favorite action compact without reducing its tap target. */
+.product-detail-page .product-summary>.button[data-favorite]{width:fit-content;max-width:100%;min-height:44px;padding:8px 16px;font-size:16px;line-height:1.5;white-space:normal;text-align:center}
 .product-information-nav a[aria-current]{background:var(--navy);color:#fff}
 .product-information-nav a:hover,.product-information-nav a:focus-visible{border-bottom-color:var(--gold)}
 .product-detail-page [id],.editorial-page [id]{scroll-margin-top:calc(var(--product-header-height,118px) + var(--product-nav-height,64px) + 24px)}
