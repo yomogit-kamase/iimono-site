@@ -198,7 +198,14 @@ document.querySelectorAll('[data-favorite]').forEach(button=>button.addEventList
 document.querySelectorAll('[data-demo-form]').forEach(form=>form.addEventListener('submit',event=>{event.preventDefault();showToast('デモのため送信せず、入力内容を確認しました')}));
 
 document.querySelectorAll('[data-certification-year]').forEach(select=>{
-  const rankSelect=document.querySelector('[data-certification-rank]');
+  const periodSelect=document.querySelector('[data-certification-period]');
+  const keyword=document.querySelector('[data-certification-keyword]');
+  const category=document.querySelector('[data-certification-category]');
+  const area=document.querySelector('[data-certification-area]');
+  const empty=document.querySelector('[data-certification-empty]');
+  const params=new URLSearchParams(location.search);
+  if([...select.options].some(option=>option.value===params.get('year')))select.value=params.get('year');
+  if(periodSelect&&[...periodSelect.options].some(option=>option.value===params.get('period')))periodSelect.value=params.get('period');
   const cards=[...document.querySelectorAll('.certification-card')];
   const count=document.querySelector('[data-certification-result-count]');
   const update=()=>{
@@ -206,14 +213,25 @@ document.querySelectorAll('[data-certification-year]').forEach(select=>{
     cards.forEach(card=>{
       const label=card.querySelector('[data-certification-label]');
       const yearMatches=select.value==='all'||label.dataset.defaultYear===select.value;
-      const rankMatches=!rankSelect||rankSelect.value==='all'||label.dataset.rank===rankSelect.value;
-      card.hidden=!(yearMatches&&rankMatches);
+      const periodMatches=!periodSelect||periodSelect.value==='all'||label.dataset.period===periodSelect.value;
+      const term=keyword?.value.trim().toLocaleLowerCase()||'';
+      const keywordMatches=!term||card.querySelector('.product-copy').textContent.toLocaleLowerCase().includes(term);
+      const meta=card.querySelector('.meta')?.textContent||'';
+      const categoryMatches=!category||category.selectedIndex===0||meta.includes(category.value.split('・')[0]);
+      const regions={'北海道・東北':['北海道','青森','岩手','宮城','秋田','山形','福島'],'関東':['東京','神奈川','千葉','埼玉','茨城','栃木','群馬'],'中部・近畿':['新潟','富山','石川','福井','山梨','長野','岐阜','静岡','愛知','三重','滋賀','京都','大阪','兵庫','奈良','和歌山'],'中国・四国':['鳥取','島根','岡山','広島','山口','徳島','香川','愛媛','高知'],'九州・沖縄':['福岡','佐賀','長崎','熊本','大分','宮崎','鹿児島','沖縄']};
+      const areaMatches=!area||area.selectedIndex===0||(regions[area.value]||[]).some(name=>meta.split('｜')[0].includes(name));
+      card.hidden=!(yearMatches&&periodMatches&&keywordMatches&&categoryMatches&&areaMatches);
       if(!card.hidden)visible++;
     });
     if(count)count.textContent=`${visible}件の商品`;
+    if(empty)empty.hidden=visible>0;
   };
   select.addEventListener('change',update);
-  rankSelect?.addEventListener('change',update);
+  periodSelect?.addEventListener('change',update);
+  category?.addEventListener('change',update);
+  area?.addEventListener('change',update);
+  keyword?.addEventListener('input',update);
+  select.closest('.toolbar')?.querySelector('button')?.addEventListener('click',update);
   update();
 });
 
