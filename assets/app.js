@@ -1,3 +1,39 @@
+// Stars select half-points; the number field and step buttons preserve tenths.
+document.querySelectorAll('[data-review-form]').forEach(form=>{
+  const input=form.querySelector('[name="rating"]');
+  const stars=[...form.querySelectorAll('.rating-star')];
+  const paint=()=>{
+    const value=input.value===''?null:input.valueAsNumber;
+    const valid=value!==null&&input.validity.valid;
+    stars.forEach((star,index)=>{
+      star.style.setProperty('--rating-fill',valid?Math.max(0,Math.min(1,value-index))*100+'%':'0%');
+    });
+    form.querySelectorAll('[data-rating-value]').forEach(button=>{
+      button.setAttribute('aria-pressed',String(valid&&Number(button.dataset.ratingValue)===value));
+    });
+  };
+  const setValue=value=>{
+    input.value=value===null?'':value.toFixed(1);
+    input.dispatchEvent(new Event('input',{bubbles:true}));
+    input.dispatchEvent(new Event('change',{bubbles:true}));
+  };
+  form.querySelectorAll('[data-rating-value]').forEach(button=>{
+    button.addEventListener('click',()=>setValue(Number(button.dataset.ratingValue)));
+  });
+  form.querySelectorAll('[data-rating-adjust]').forEach(button=>{
+    button.addEventListener('click',()=>{
+      if(input.value!==''&&!input.validity.valid){input.reportValidity();return;}
+      const base=input.value===''?0:Math.round(input.valueAsNumber*10);
+      setValue(Math.max(0,Math.min(50,base+Number(button.dataset.ratingAdjust)))/10);
+    });
+  });
+  form.querySelector('[data-rating-clear]')?.addEventListener('click',()=>setValue(null));
+  input.addEventListener('input',paint);
+  input.addEventListener('change',()=>{if(input.value!==''&&input.validity.valid)input.value=input.valueAsNumber.toFixed(1);paint();});
+  form.addEventListener('reset',()=>setTimeout(paint,0));
+  paint();
+});
+
 // Keep the selected article title visible when arriving at a deep link on mobile.
 document.querySelectorAll('.article-title-tabs').forEach(nav=>{
   const reveal=()=>{

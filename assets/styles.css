@@ -564,3 +564,19 @@ td a{border-bottom:1px solid var(--gold)}
  .editorial-product-return h2{font-size:18px}
  .editorial-product-return .button{padding:12px;white-space:normal}
 }
+.review-rating{display:grid;gap:12px}
+.review-rating>label{font-weight:700}
+.rating-stars{display:flex;width:240px;max-width:100%;gap:0}
+.rating-star{position:relative;display:block;width:48px;height:48px;flex:1;min-width:0;color:#64748b}
+.rating-star>svg,.rating-star-fill svg{display:block;width:48px;height:48px;padding:3px;box-sizing:border-box;fill:none;stroke:currentColor;stroke-width:1.2}
+.rating-star-fill{position:absolute;inset:0 auto 0 0;width:var(--rating-fill,0%);overflow:hidden;pointer-events:none;color:#17263e}
+.rating-star-fill svg{fill:currentColor}
+.rating-star button{position:absolute;top:0;bottom:0;width:50%;padding:0;border:0;background:transparent;cursor:pointer;border-radius:4px}
+.rating-star button:first-of-type{left:0}
+.rating-star button:last-of-type{right:0}
+.rating-star button:focus-visible{outline:2px solid #17263e;outline-offset:2px;background:rgb(23 38 62 / 8%)}
+.rating-number{display:flex;align-items:center;flex-wrap:wrap;gap:8px;color:#17263e}
+.rating-number button{min-width:44px;min-height:44px;border:1px solid #64748b;background:white;color:#17263e;font-size:20px;cursor:pointer}
+.rating-number input{width:88px;min-width:0;height:48px;text-align:center;font-size:22px;font-weight:700;padding:6px;appearance:textfield}
+.rating-number input::-webkit-inner-spin-button,.rating-number input::-webkit-outer-spin-button{appearance:none;margin:0}
+.rating-number .rating-clear{font-size:16px;padding:6px 8px;border-color:transparent;text-decoration:underline}
