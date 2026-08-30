@@ -1,3 +1,28 @@
+// Measure the shared header and product links so deep links keep headings visible.
+(() => {
+  const nav=document.querySelector('.product-information-nav');
+  if(!nav)return;
+  const header=document.querySelector('.common-site-header');
+  const update=()=>{
+    document.documentElement.style.setProperty('--product-header-height',`${header?.getBoundingClientRect().height||0}px`);
+    document.documentElement.style.setProperty('--product-nav-height',`${nav.getBoundingClientRect().height}px`);
+  };
+  update();
+  const observer=new ResizeObserver(update);
+  if(header)observer.observe(header);
+  observer.observe(nav);
+  const samePageLinks=[...nav.querySelectorAll('a')].filter(a=>new URL(a.href).pathname===location.pathname&&a.hash);
+  const highlight=()=>{
+    const active=samePageLinks.find(a=>a.hash===location.hash)||samePageLinks[0];
+    samePageLinks.forEach(a=>a===active?a.setAttribute('aria-current','location'):a.removeAttribute('aria-current'));
+  };
+  if(samePageLinks.length){highlight();window.addEventListener('hashchange',highlight);}
+  window.addEventListener('load',()=>{
+    update();
+    if(location.hash){const target=document.getElementById(location.hash.slice(1));target?.scrollIntoView();}
+  },{once:true});
+})();
+
 document.querySelectorAll('[data-tabs]').forEach(group=>{
   const activate=button=>{
     const key=button.dataset.tab;

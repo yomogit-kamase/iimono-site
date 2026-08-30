@@ -412,3 +412,58 @@ td a{border-bottom:1px solid var(--gold)}
 .about-selection-mark strong{font-size:32px;margin:0;white-space:nowrap}
 .about-selection-mark span:first-child{max-width:10em;text-align:left;word-break:keep-all}
 }
+
+/* Product information links: in-page messages, separate editorial. */
+.product-information-nav{position:sticky;top:var(--product-header-height,118px);z-index:30;display:flex;background:#fff;border:1px solid var(--line);margin:0 0 32px;box-shadow:0 3px 12px #14233b08}
+.product-information-nav a{flex:1;min-width:0;padding:16px 8px;text-align:center;color:var(--navy);font-size:16px;font-weight:700;text-decoration:none;border-bottom:3px solid transparent}
+.product-information-nav a[aria-current]{background:var(--navy);color:#fff}
+.product-information-nav a:hover,.product-information-nav a:focus-visible{border-bottom-color:var(--gold)}
+.product-detail-page [id],.editorial-page [id]{scroll-margin-top:calc(var(--product-header-height,118px) + var(--product-nav-height,64px) + 24px)}
+.editorial-page{max-width:1120px;margin:auto}
+.editorial-page .breadcrumb{flex-wrap:wrap;line-height:1.7}
+.editorial-product-context{display:flex;gap:18px;align-items:center;margin:0 auto 32px;max-width:800px}
+.editorial-product-context img{width:64px;height:64px;object-fit:cover}
+.editorial-product-context div{display:grid;gap:6px;min-width:0}
+.editorial-product-context span{font-size:16px}
+.editorial-product-context a{font-size:18px;color:var(--navy);text-underline-offset:5px}
+.editorial-page .product-editorial-article{border:0}
+.editorial-page .product-editorial-header,.editorial-page .product-editorial-body{width:min(800px,100%)}
+.editorial-page .product-editorial-header{padding:12px 0 36px}
+.editorial-eyebrow{color:var(--navy);font-size:16px;font-weight:700;letter-spacing:.08em}
+.editorial-page h1{margin:20px 0 24px;font:600 clamp(28px,3vw,40px)/1.6 "Yu Mincho","Hiragino Mincho ProN",serif;letter-spacing:.02em;color:var(--navy);text-wrap:pretty;overflow-wrap:anywhere}
+.editorial-dates,.editorial-sample-note{font-size:16px;line-height:1.8;color:#384454}
+.editorial-sample-note{border-left:2px solid var(--line);padding-left:12px;margin:20px 0}
+.editorial-page .product-editorial-lead,.editorial-page .product-editorial-body>p{font-size:20px;line-height:2;color:#26364b}
+.editorial-page .product-editorial-hero{max-width:960px;margin:auto}
+.editorial-page .product-editorial-hero img{aspect-ratio:16/9}
+.editorial-page .product-editorial-body>h2{margin:52px 0 22px;padding-left:18px;border-left:3px solid var(--gold);font:600 28px/1.6 "Yu Mincho","Hiragino Mincho ProN",serif;color:var(--navy)}
+.editorial-toc{padding:28px 32px;margin:0 0 40px;background:#f4f2ed}
+.editorial-toc h2,.editorial-page .product-editorial-points h2{margin:0 0 18px;font-size:22px;line-height:1.6;color:var(--navy)}
+.editorial-toc ol{padding-left:24px;margin:0}
+.editorial-toc li{padding:8px 0;font-size:18px;line-height:1.7}
+.editorial-toc a{color:var(--navy);text-underline-offset:5px}
+.editorial-page .product-editorial-points ol{grid-template-columns:1fr;background:transparent;gap:12px}
+.editorial-page .product-editorial-points li{position:relative;padding:20px 20px 20px 70px}
+.editorial-page .product-editorial-points li>span{position:absolute;left:20px;top:24px}
+.editorial-page .product-editorial-points li>strong{font-size:20px}
+.editorial-page .product-editorial-points li>p,.editorial-page .product-editorial-note p{font-size:18px;line-height:1.9}
+.editorial-product-return{display:grid;grid-template-columns:150px 1fr;gap:24px;align-items:center;margin:42px 0;padding:24px;border:1px solid var(--line)}
+.editorial-product-return img{width:150px;aspect-ratio:1;object-fit:cover}
+.editorial-product-return p{font-size:16px;margin:0 0 8px}
+.editorial-product-return h2{font-size:21px;line-height:1.7;margin:0 0 18px}
+.editorial-product-return .button{font-size:16px}
+@media(max-width:700px){
+ .product-information-nav{margin-bottom:24px}
+ .product-information-nav a{padding:13px 4px;white-space:nowrap}
+ .editorial-page h1{font-size:28px}
+ .editorial-page .product-editorial-lead,.editorial-page .product-editorial-body>p{font-size:18px;line-height:1.95}
+ .editorial-page .product-editorial-body>h2{font-size:24px;padding-left:12px}
+ .editorial-toc{padding:22px 18px}
+ .editorial-page .product-editorial-points{margin:32px 0;padding:22px 14px}
+ .editorial-page .product-editorial-points li{padding-left:55px}
+ .editorial-page .product-editorial-points li>span{left:14px}
+ .editorial-product-return{grid-template-columns:80px 1fr;gap:16px;padding:18px}
+ .editorial-product-return img{width:80px}
+ .editorial-product-return h2{font-size:18px}
+ .editorial-product-return .button{padding:12px;white-space:normal}
+}
