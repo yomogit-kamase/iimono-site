@@ -78,6 +78,9 @@ main{width:min(1440px,96.8vw)}
 .search-page .filter-chip{display:inline-flex;align-items:center;min-height:40px;text-decoration:none}
 .search-page .filter-chip:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 .search-page .results .product-grid{display:block}
+.search-page .pagination{flex-wrap:wrap;align-items:center}
+.search-page .pagination a{padding-inline:10px;min-height:44px;height:auto}
+.search-page .result-bar{flex-wrap:wrap;gap:16px}
 .search-page .results .product-card{display:grid;grid-template-columns:320px minmax(0,1fr);height:320px;min-height:320px;margin-bottom:22px}
 .search-page .results .product-card>a{display:block;width:320px;height:320px;min-height:0;align-self:start;background:#f4f2ed;overflow:hidden}
 .search-page .results .product-card>a img{display:block;width:320px;height:320px;aspect-ratio:1;object-fit:cover;object-position:center}

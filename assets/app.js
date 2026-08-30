@@ -23,6 +23,28 @@
   },{once:true});
 })();
 
+// Static markup pagination: repeat sample products; the production API returns 20 real results.
+document.querySelectorAll('[data-search-results]').forEach(results=>{
+  const size=Number(results.dataset.pageSize);
+  const total=Number(results.dataset.total);
+  const pages=Math.max(1,Math.ceil(total/size));
+  const raw=new URLSearchParams(location.search).get('page')||'1';
+  const parsed=/^[1-9]\d*$/.test(raw)?Number(raw):1;
+  const page=Math.min(pages,Number.isSafeInteger(parsed)?parsed:1);
+  results.dataset.page=String(page);
+  const start=(page-1)*size;
+  const end=Math.min(start+size,total);
+  const grid=results.querySelector('.product-grid');
+  const samples=[...grid.children].slice(0,8);
+  grid.replaceChildren(...Array.from({length:end-start},(_,i)=>{
+    const card=samples[(start+i)%samples.length].cloneNode(true);
+    const image=card.querySelector('img');
+    if(image)image.loading=i<2?'eager':'lazy';
+    return card;
+  }));
+  document.querySelector('[data-search-range]').textContent=`全${total}件中 ${start+1}〜${end}件を表示`;
+});
+
 document.querySelectorAll('[data-tabs]').forEach(group=>{
   const activate=button=>{
     const key=button.dataset.tab;
@@ -186,11 +208,24 @@ document.querySelectorAll('[data-search-filter]').forEach(form=>{
       summary.append(chip);
     });
   }
-  document.querySelectorAll('.search-page .pagination a').forEach(link=>{
-    const page=new URL(link.href).searchParams.get('page');
-    const next=new URLSearchParams(applied);
-    if(page)next.set('page',page);
-    link.href=`${form.action}?${next}`;
+  const results=document.querySelector('[data-search-results]');
+  const page=Number(results.dataset.page);
+  const last=Math.ceil(Number(results.dataset.total)/Number(results.dataset.pageSize));
+  document.querySelectorAll('.search-page .pagination').forEach(nav=>{
+    nav.replaceChildren();
+    const add=(number,label=String(number))=>{
+      const next=new URLSearchParams(applied);next.set('page',String(number));
+      const link=document.createElement('a');link.href=`${form.action}?${next}`;link.textContent=label;
+      if(number===page){link.className='active';link.setAttribute('aria-current','page');}
+      nav.append(link);
+    };
+    if(page>1)add(page-1,'← 前へ');
+    const numbers=[...new Set([1,page-1,page,page+1,last])].filter(n=>n>=1&&n<=last).sort((a,b)=>a-b);
+    numbers.forEach((number,index)=>{
+      if(index&&number-numbers[index-1]>1){const gap=document.createElement('span');gap.textContent='…';nav.append(gap);}
+      add(number);
+    });
+    if(page<last)add(page+1,'次へ →');
   });
 });
 
