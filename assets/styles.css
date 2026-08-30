@@ -66,6 +66,17 @@ main{width:min(1440px,96.8vw)}
 .search-page .filters h2{font-size:22px}
 .search-page .filters .field>span,.search-page .filters>label:not(.field){font-size:16px}
 .search-page .filters input,.search-page .filters select,.search-page .result-bar select{font-size:16px}
+.search-page .filters{position:static;min-width:0}
+.hierarchy-filter{min-width:0;margin:24px 0;padding:18px 0 0;border:0;border-top:1px solid var(--line)}
+.hierarchy-filter legend{padding:0 12px 0 0;font-size:18px;font-weight:700;color:var(--navy)}
+.hierarchy-filter .field{margin:14px 0 0;min-width:0}
+.search-page .hierarchy-filter .field>span{font-size:16px;color:var(--navy)}
+.hierarchy-filter select{width:100%;min-width:0;min-height:48px;padding-inline:10px}
+.hierarchy-filter select:disabled{background:#f3f2ef;color:#586273;border-color:#dedbd5;opacity:1;cursor:not-allowed}
+.hierarchy-help,.hierarchy-state{margin:0;color:#344052;font-size:16px;line-height:1.7}
+.hierarchy-state:not(:empty){margin-top:14px;padding-left:10px;border-left:2px solid var(--gold)}
+.search-page .filter-chip{display:inline-flex;align-items:center;min-height:40px;text-decoration:none}
+.search-page .filter-chip:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
 .search-page .results .product-grid{display:block}
 .search-page .results .product-card{display:grid;grid-template-columns:320px minmax(0,1fr);height:320px;min-height:320px;margin-bottom:22px}
 .search-page .results .product-card>a{display:block;width:320px;height:320px;min-height:0;align-self:start;background:#f4f2ed;overflow:hidden}

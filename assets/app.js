@@ -80,18 +80,93 @@ document.querySelectorAll('[data-certification-year]').forEach(select=>{
 
 document.querySelectorAll('[data-search-filter]').forEach(form=>{
   const params=new URLSearchParams(location.search);
+  const trees=JSON.parse(form.querySelector('[data-search-hierarchies]')?.textContent||'{}');
+  const hierarchyNames=new Set();
+  const groups=[];
+  const findPath=(nodes,value,path=[])=>{
+    for(const node of nodes){
+      const next=[...path,node.id];
+      if(node.id===value||node.label===value)return next;
+      const found=findPath(node.children||[],value,next);
+      if(found)return found;
+    }
+    return null;
+  };
+  form.querySelectorAll('[data-hierarchy]').forEach(group=>{
+    const key=group.dataset.hierarchy;
+    const nodes=trees[key]||[];
+    const selects=[...group.querySelectorAll('select')];
+    const labels=selects.map(select=>select.closest('label').querySelector('span').textContent);
+    selects.forEach(select=>hierarchyNames.add(select.name));
+    groups.push(selects.map(select=>select.name));
+    let wanted=selects.map(select=>params.get(select.name)||'');
+    // TOP等の旧リンク（?category=jelly-pudding / ?area=関東）も親階層を復元する。
+    const legacy=params.get(key);
+    if(!wanted.some(Boolean)&&legacy)wanted=findPath(nodes,legacy)||wanted;
+    const populate=values=>{
+      let options=nodes;
+      let parentSelected=true;
+      let lastLabel='';
+      selects.forEach((select,index)=>{
+        const disabled=!parentSelected||options.length===0;
+        const placeholder=!parentSelected?`先に${labels[index-1]}を選択`:options.length===0?'細かい指定なし':`すべての${labels[index]}`;
+        select.replaceChildren(new Option(placeholder,''));
+        options.forEach(node=>select.add(new Option(node.label,node.id)));
+        select.disabled=disabled;
+        const selected=!disabled&&options.find(node=>node.id===values[index]);
+        select.value=selected?selected.id:'';
+        if(selected)lastLabel=selected.label;
+        options=selected?selected.children||[]:[];
+        parentSelected=!!selected;
+      });
+      group.querySelector('[data-hierarchy-status]').textContent=lastLabel?`${lastLabel}以下のすべてを対象にできます。`:'';
+    };
+    populate(wanted);
+    selects.forEach((select,index)=>select.addEventListener('change',()=>{
+      populate(selects.map((field,i)=>i<=index?field.value:''));
+    }));
+  });
   [...form.elements].forEach(field=>{
-    if(!field.name)return;
+    if(!field.name||hierarchyNames.has(field.name))return;
     if(field.type==='checkbox')field.checked=params.getAll(field.name).includes(field.value);
     else if(params.has(field.name))field.value=params.get(field.name);
   });
   const sort=document.querySelector('[data-search-sort]');
-  if(sort&&params.has('sort'))sort.value=params.get('sort');
-  sort?.addEventListener('change',()=>{params.set('sort',sort.value);params.delete('page');location.search=params.toString()});
+  if(sort&&[...sort.options].some(option=>option.value===params.get('sort')))sort.value=params.get('sort');
+  const applied=new URLSearchParams();
+  new FormData(form).forEach((value,key)=>{if(value)applied.append(key,value)});
+  if(sort&&sort.value!=='recommended')applied.set('sort',sort.value);
+  sort?.addEventListener('change',()=>{applied.set('sort',sort.value);applied.delete('page');location.search=applied.toString()});
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    const next=new URLSearchParams();
+    new FormData(form).forEach((value,key)=>{if(value)next.append(key,value)});
+    if(sort&&sort.value!=='recommended')next.set('sort',sort.value);
+    location.href=`${form.action}${next.size?'?'+next.toString():''}`;
+  });
   const summary=document.querySelector('[data-active-filters]');
   if(summary){
-    params.forEach((value,key)=>{if(key!=='page'&&key!=='sort'&&value){const field=form.elements.namedItem(key);const label=field instanceof HTMLSelectElement&&field.selectedOptions[0]?field.selectedOptions[0].textContent:value;const chip=document.createElement('span');chip.className='filter-chip';chip.textContent=label;summary.append(chip)}});
+    applied.forEach((value,key)=>{
+      if(key==='sort')return;
+      const field=form.elements.namedItem(key);
+      const label=field instanceof HTMLSelectElement?field.selectedOptions[0].textContent:key==='voice'?({editor:'編集部記事あり',producer:'生産者メッセージあり',expert:'専門家メッセージあり'}[value]||value):value;
+      const next=new URLSearchParams(applied);
+      const branch=groups.find(names=>names.includes(key));
+      if(branch)branch.slice(branch.indexOf(key)).forEach(name=>next.delete(name));
+      else next.delete(key,value);
+      const chip=document.createElement('a');
+      chip.className='filter-chip';chip.textContent=`${label} ×`;
+      chip.href=`${form.action}${next.size?'?'+next.toString():''}`;
+      chip.setAttribute('aria-label',`${label}の条件を解除`);
+      summary.append(chip);
+    });
   }
+  document.querySelectorAll('.search-page .pagination a').forEach(link=>{
+    const page=new URL(link.href).searchParams.get('page');
+    const next=new URLSearchParams(applied);
+    if(page)next.set('page',page);
+    link.href=`${form.action}?${next}`;
+  });
 });
 
 document.querySelectorAll('[data-review-images]').forEach(input=>{
