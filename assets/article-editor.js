@@ -15,6 +15,9 @@
     }
   }catch{message('下書きを復元できなかったため、サンプルを表示しています。');}
   root.querySelectorAll('[data-article-field]').forEach(input=>input.value=state[input.dataset.articleField]||'');
+  const tabLabel=root.querySelector('[data-article-tab-label]');
+  const updateTabLabel=()=>{if(tabLabel)tabLabel.textContent=state.title.trim()||'記事タイトル';};
+  updateTabLabel();
   const button=(action,label,attrs='')=>`<button type="button" class="button" data-article-action="${action}" ${attrs}>${label}</button>`;
   const field=(label,key,value,attrs='',multiline=false)=>`<label class="field"><span>${label}</span>${multiline?`<textarea data-content-field="${key}" ${attrs} rows="3">${E(value)}</textarea>`:`<input data-content-field="${key}" ${attrs} value="${E(value)}">`}</label>`;
   const safeImageSrc=src=>/^\/(?!\/)/.test(src||'')||/^data:image\/(png|jpeg|webp);base64,/.test(src||'')?src:'';
@@ -38,7 +41,7 @@
       if(target.image)target.image[input.dataset.imageField]=input.value;
       message('画像の説明を変更しました。下書きを保存してください。');
     }
-    if(input.dataset.articleField){state[input.dataset.articleField]=input.value;message('未保存の変更があります。');}
+    if(input.dataset.articleField){state[input.dataset.articleField]=input.value;updateTabLabel();message('未保存の変更があります。');}
     if(input.dataset.contentField){
       const {s,c,t}=locate(input);
       const section=state.sections[s];

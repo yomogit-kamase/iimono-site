@@ -1,3 +1,14 @@
+// Keep the selected article title visible when arriving at a deep link on mobile.
+document.querySelectorAll('.article-title-tabs').forEach(nav=>{
+  const reveal=()=>{
+    const active=nav.querySelector('[aria-current="page"]');
+    if(!active||nav.scrollWidth<=nav.clientWidth)return;
+    const box=nav.getBoundingClientRect(),item=active.getBoundingClientRect();
+    nav.scrollLeft+=item.left-box.left-(box.width-item.width)/2;
+  };
+  reveal();window.addEventListener('load',reveal,{once:true});window.addEventListener('resize',reveal);
+});
+
 // Featured article selection is an admin preview, not a publication action.
 document.querySelectorAll('[data-featured-article-form]').forEach(form=>{
   form.addEventListener('submit',event=>event.preventDefault());
