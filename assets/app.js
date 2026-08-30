@@ -1,3 +1,17 @@
+// Featured article selection is an admin preview, not a publication action.
+document.querySelectorAll('[data-featured-article-form]').forEach(form=>{
+  form.addEventListener('submit',event=>event.preventDefault());
+  const select=form.querySelector('[data-featured-article-select]');
+  select.addEventListener('change',()=>{
+    const option=select.selectedOptions[0];
+    form.querySelector('[data-featured-image]').src=option.dataset.image;
+    const link=form.querySelector('[data-featured-link]');
+    link.textContent=option.dataset.title;
+    link.href=option.dataset.url;
+    form.querySelector('[data-featured-status]').textContent='先頭記事のプレビューを変更しました。公開サイトには反映されません。';
+  });
+});
+
 // Measure the shared header and product links so deep links keep headings visible.
 (() => {
   const nav=document.querySelector('.product-information-nav');
